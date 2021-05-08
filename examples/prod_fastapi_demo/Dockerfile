@@ -2,7 +2,6 @@ FROM python:3.9-alpine as base
 
 FROM base as builder
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev libffi-dev openssl-dev make postgresql-dev cargo g++
-RUN pip install --upgrade pip
 RUN pip install poetry
 COPY . /src/
 WORKDIR /src
